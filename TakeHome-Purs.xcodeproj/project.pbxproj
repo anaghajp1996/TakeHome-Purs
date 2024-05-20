@@ -7,18 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D256B56F2BFC0666003B2284 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D256B56E2BFC0666003B2284 /* Alamofire */; };
+		D2699CF22BFC10EE00F90107 /* FiraSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2699CDE2BFC10EE00F90107 /* FiraSans-Black.ttf */; };
+		D2699D042BFC10EE00F90107 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2699CF02BFC10EE00F90107 /* OFL.txt */; };
 		D2E8B76D2BFBE7B100B5FF40 /* TakeHome_PursApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8B76C2BFBE7B100B5FF40 /* TakeHome_PursApp.swift */; };
 		D2E8B76F2BFBE7B100B5FF40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8B76E2BFBE7B100B5FF40 /* ContentView.swift */; };
 		D2E8B7712BFBE7B300B5FF40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E8B7702BFBE7B300B5FF40 /* Assets.xcassets */; };
 		D2E8B7742BFBE7B300B5FF40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E8B7732BFBE7B300B5FF40 /* Preview Assets.xcassets */; };
+		D2E8B77B2BFBE7D800B5FF40 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8B77A2BFBE7D800B5FF40 /* Network.swift */; };
+		D2E8B7852BFBFAD900B5FF40 /* BusinessVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8B7842BFBFAD900B5FF40 /* BusinessVM.swift */; };
+		D2E8B7872BFBFC7000B5FF40 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8B7862BFBFC7000B5FF40 /* Business.swift */; };
+		D2E8B7892BFC00A600B5FF40 /* BusinessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8B7882BFC00A600B5FF40 /* BusinessScreen.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D256B5672BFC0535003B2284 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D2699CDE2BFC10EE00F90107 /* FiraSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-Black.ttf"; sourceTree = "<group>"; };
+		D2699CF02BFC10EE00F90107 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		D2699D052BFC11F400F90107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D2E8B7692BFBE7B100B5FF40 /* TakeHome-Purs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TakeHome-Purs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E8B76C2BFBE7B100B5FF40 /* TakeHome_PursApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeHome_PursApp.swift; sourceTree = "<group>"; };
 		D2E8B76E2BFBE7B100B5FF40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D2E8B7702BFBE7B300B5FF40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2E8B7732BFBE7B300B5FF40 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D2E8B77A2BFBE7D800B5FF40 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D2E8B7842BFBFAD900B5FF40 /* BusinessVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessVM.swift; sourceTree = "<group>"; };
+		D2E8B7862BFBFC7000B5FF40 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		D2E8B7882BFC00A600B5FF40 /* BusinessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +53,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D256B56F2BFC0666003B2284 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D256B56D2BFC0666003B2284 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2699CF12BFC10EE00F90107 /* Fira_Sans */ = {
+			isa = PBXGroup;
+			children = (
+				D2699CDE2BFC10EE00F90107 /* FiraSans-Black.ttf */,
+				D2699CF02BFC10EE00F90107 /* OFL.txt */,
+			);
+			path = Fira_Sans;
+			sourceTree = "<group>";
+		};
 		D2E8B7602BFBE7B100B5FF40 = {
 			isa = PBXGroup;
 			children = (
+				D2699CF12BFC10EE00F90107 /* Fira_Sans */,
 				D2E8B76B2BFBE7B100B5FF40 /* TakeHome-Purs */,
 				D2E8B76A2BFBE7B100B5FF40 /* Products */,
+				D256B56D2BFC0666003B2284 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +97,15 @@
 		D2E8B76B2BFBE7B100B5FF40 /* TakeHome-Purs */ = {
 			isa = PBXGroup;
 			children = (
+				D2699D052BFC11F400F90107 /* Info.plist */,
+				D2E8B7832BFBFAC900B5FF40 /* Model */,
+				D2E8B7822BFBFAC400B5FF40 /* View */,
+				D2E8B7812BFBFABE00B5FF40 /* ViewModel */,
 				D2E8B76C2BFBE7B100B5FF40 /* TakeHome_PursApp.swift */,
 				D2E8B76E2BFBE7B100B5FF40 /* ContentView.swift */,
 				D2E8B7702BFBE7B300B5FF40 /* Assets.xcassets */,
 				D2E8B7722BFBE7B300B5FF40 /* Preview Content */,
+				D2E8B77A2BFBE7D800B5FF40 /* Network.swift */,
 			);
 			path = "TakeHome-Purs";
 			sourceTree = "<group>";
@@ -67,6 +118,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D2E8B7812BFBFABE00B5FF40 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D2E8B7842BFBFAD900B5FF40 /* BusinessVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D2E8B7822BFBFAC400B5FF40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D2E8B7882BFC00A600B5FF40 /* BusinessScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D2E8B7832BFBFAC900B5FF40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2E8B7862BFBFC7000B5FF40 /* Business.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,12 +152,16 @@
 				D2E8B7652BFBE7B100B5FF40 /* Sources */,
 				D2E8B7662BFBE7B100B5FF40 /* Frameworks */,
 				D2E8B7672BFBE7B100B5FF40 /* Resources */,
+				D256B5672BFC0535003B2284 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "TakeHome-Purs";
+			packageProductDependencies = (
+				D256B56E2BFC0666003B2284 /* Alamofire */,
+			);
 			productName = "TakeHome-Purs";
 			productReference = D2E8B7692BFBE7B100B5FF40 /* TakeHome-Purs.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +190,9 @@
 				Base,
 			);
 			mainGroup = D2E8B7602BFBE7B100B5FF40;
+			packageReferences = (
+				D256B56C2BFC0642003B2284 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = D2E8B76A2BFBE7B100B5FF40 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +207,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2699D042BFC10EE00F90107 /* OFL.txt in Resources */,
 				D2E8B7742BFBE7B300B5FF40 /* Preview Assets.xcassets in Resources */,
 				D2E8B7712BFBE7B300B5FF40 /* Assets.xcassets in Resources */,
+				D2699CF22BFC10EE00F90107 /* FiraSans-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E8B7872BFBFC7000B5FF40 /* Business.swift in Sources */,
 				D2E8B76F2BFBE7B100B5FF40 /* ContentView.swift in Sources */,
+				D2E8B7852BFBFAD900B5FF40 /* BusinessVM.swift in Sources */,
 				D2E8B76D2BFBE7B100B5FF40 /* TakeHome_PursApp.swift in Sources */,
+				D2E8B7892BFC00A600B5FF40 /* BusinessScreen.swift in Sources */,
+				D2E8B77B2BFBE7D800B5FF40 /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +363,7 @@
 				DEVELOPMENT_TEAM = KA6DM975X6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TakeHome-Purs/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +393,7 @@
 				DEVELOPMENT_TEAM = KA6DM975X6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TakeHome-Purs/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +434,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D256B56C2BFC0642003B2284 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D256B56E2BFC0666003B2284 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D256B56C2BFC0642003B2284 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D2E8B7612BFBE7B100B5FF40 /* Project object */;
 }
