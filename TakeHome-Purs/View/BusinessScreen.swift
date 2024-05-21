@@ -51,6 +51,7 @@ struct BusinessScreen: View {
                                 .padding()
                         }
                         Spacer()
+                        ViewMenu()
                     }
                     .background(
                         AsyncImage(url: URL(string: imageURL)) { image in
@@ -70,4 +71,17 @@ struct BusinessScreen: View {
 
 #Preview {
     BusinessScreen()
+}
+
+struct ViewMenu: View {
+    var body: some View {
+        VStack {
+            Image(systemName: "chevron.up")
+                .foregroundStyle(.white.opacity(0.5))
+            Image(systemName: "chevron.up")
+            Text("View Menu")
+                .font(.custom(Constants.HindSiliguriReg, size: 24))
+        }
+        .foregroundStyle(.white)
+    }
 }
