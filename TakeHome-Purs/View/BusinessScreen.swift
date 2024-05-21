@@ -36,7 +36,7 @@ struct BusinessScreen: View {
                         .background(
                             LinearGradient(gradient: Gradient(colors: [.black.opacity(0.5), .clear]), startPoint: .top, endPoint: .bottom)
                         )
-                        if let hours = business?.hours, let timings = business?.timings {
+                        if let hours = business?.hours, let timings = business?.combinedHours {
                             Accordion(title:
                                 AnyView(
                                     HStack {

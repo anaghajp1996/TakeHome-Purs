@@ -46,7 +46,7 @@ struct Accordion: View {
                     .foregroundStyle(.black.opacity(0.25))
                     .padding(.horizontal)
                 List(timings, id: \.self) { timing in
-                    let rangeString = timing.timings.map { $0.rangeString }.joined(separator: ",\n")
+                    let rangeString = timing.timeRanges.map { $0.rangeString }.joined(separator: ",\n")
                     HStack(alignment: .top) {
                         Text(timing.day)
                         Spacer()
