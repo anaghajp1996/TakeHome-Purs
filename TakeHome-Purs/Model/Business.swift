@@ -23,7 +23,7 @@ struct Business: Decodable {
     }
 }
 
-struct Hours: Decodable {
+struct Hours: Decodable, Hashable {
     var dayOfWeek: String?
     var startTime: String?
     var endTime: String?

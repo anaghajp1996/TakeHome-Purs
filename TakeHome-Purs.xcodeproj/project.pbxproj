@@ -9,7 +9,15 @@
 /* Begin PBXBuildFile section */
 		D256B56F2BFC0666003B2284 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D256B56E2BFC0666003B2284 /* Alamofire */; };
 		D2699CF22BFC10EE00F90107 /* FiraSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2699CDE2BFC10EE00F90107 /* FiraSans-Black.ttf */; };
-		D2699D042BFC10EE00F90107 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2699CF02BFC10EE00F90107 /* OFL.txt */; };
+		D2699D042BFC10EE00F90107 /* FS_OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2699CF02BFC10EE00F90107 /* FS_OFL.txt */; };
+		D2699D102BFC26BE00F90107 /* HindSiliguri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2699D092BFC26BE00F90107 /* HindSiliguri-Regular.ttf */; };
+		D2699D122BFC26BE00F90107 /* HS_OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2699D0B2BFC26BE00F90107 /* HS_OFL.txt */; };
+		D2699D382BFC270A00F90107 /* Chivo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2699D202BFC270A00F90107 /* Chivo-Regular.ttf */; };
+		D2699D3F2BFC270A00F90107 /* C_OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2699D282BFC270A00F90107 /* C_OFL.txt */; };
+		D2699D422BFC28FA00F90107 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2699D412BFC28FA00F90107 /* Constants.swift */; };
+		D2699D442BFC2A1500F90107 /* FullScreenProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2699D432BFC2A1500F90107 /* FullScreenProgressIndicator.swift */; };
+		D2699D462BFC2B5900F90107 /* Accordion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2699D452BFC2B5900F90107 /* Accordion.swift */; };
+		D2699D482BFC2B8300F90107 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2699D472BFC2B8200F90107 /* ErrorView.swift */; };
 		D2E8B76D2BFBE7B100B5FF40 /* TakeHome_PursApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8B76C2BFBE7B100B5FF40 /* TakeHome_PursApp.swift */; };
 		D2E8B76F2BFBE7B100B5FF40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8B76E2BFBE7B100B5FF40 /* ContentView.swift */; };
 		D2E8B7712BFBE7B300B5FF40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E8B7702BFBE7B300B5FF40 /* Assets.xcassets */; };
@@ -35,8 +43,16 @@
 
 /* Begin PBXFileReference section */
 		D2699CDE2BFC10EE00F90107 /* FiraSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-Black.ttf"; sourceTree = "<group>"; };
-		D2699CF02BFC10EE00F90107 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		D2699CF02BFC10EE00F90107 /* FS_OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FS_OFL.txt; sourceTree = "<group>"; };
 		D2699D052BFC11F400F90107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D2699D092BFC26BE00F90107 /* HindSiliguri-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HindSiliguri-Regular.ttf"; sourceTree = "<group>"; };
+		D2699D0B2BFC26BE00F90107 /* HS_OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HS_OFL.txt; sourceTree = "<group>"; };
+		D2699D202BFC270A00F90107 /* Chivo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chivo-Regular.ttf"; sourceTree = "<group>"; };
+		D2699D282BFC270A00F90107 /* C_OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = C_OFL.txt; sourceTree = "<group>"; };
+		D2699D412BFC28FA00F90107 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D2699D432BFC2A1500F90107 /* FullScreenProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenProgressIndicator.swift; sourceTree = "<group>"; };
+		D2699D452BFC2B5900F90107 /* Accordion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accordion.swift; sourceTree = "<group>"; };
+		D2699D472BFC2B8200F90107 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		D2E8B7692BFBE7B100B5FF40 /* TakeHome-Purs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TakeHome-Purs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E8B76C2BFBE7B100B5FF40 /* TakeHome_PursApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeHome_PursApp.swift; sourceTree = "<group>"; };
 		D2E8B76E2BFBE7B100B5FF40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,14 +87,35 @@
 			isa = PBXGroup;
 			children = (
 				D2699CDE2BFC10EE00F90107 /* FiraSans-Black.ttf */,
-				D2699CF02BFC10EE00F90107 /* OFL.txt */,
+				D2699CF02BFC10EE00F90107 /* FS_OFL.txt */,
 			);
 			path = Fira_Sans;
+			sourceTree = "<group>";
+		};
+		D2699D0C2BFC26BE00F90107 /* Hind_Siliguri */ = {
+			isa = PBXGroup;
+			children = (
+				D2699D092BFC26BE00F90107 /* HindSiliguri-Regular.ttf */,
+				D2699D0B2BFC26BE00F90107 /* HS_OFL.txt */,
+			);
+			path = Hind_Siliguri;
+			sourceTree = "<group>";
+		};
+		D2699D2A2BFC270A00F90107 /* Chivo */ = {
+			isa = PBXGroup;
+			children = (
+				D2699D202BFC270A00F90107 /* Chivo-Regular.ttf */,
+				D2699D282BFC270A00F90107 /* C_OFL.txt */,
+			);
+			path = Chivo;
 			sourceTree = "<group>";
 		};
 		D2E8B7602BFBE7B100B5FF40 = {
 			isa = PBXGroup;
 			children = (
+				D2699D412BFC28FA00F90107 /* Constants.swift */,
+				D2699D2A2BFC270A00F90107 /* Chivo */,
+				D2699D0C2BFC26BE00F90107 /* Hind_Siliguri */,
 				D2699CF12BFC10EE00F90107 /* Fira_Sans */,
 				D2E8B76B2BFBE7B100B5FF40 /* TakeHome-Purs */,
 				D2E8B76A2BFBE7B100B5FF40 /* Products */,
@@ -130,6 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				D2E8B7882BFC00A600B5FF40 /* BusinessScreen.swift */,
+				D2699D432BFC2A1500F90107 /* FullScreenProgressIndicator.swift */,
+				D2699D452BFC2B5900F90107 /* Accordion.swift */,
+				D2699D472BFC2B8200F90107 /* ErrorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,9 +247,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2699D042BFC10EE00F90107 /* OFL.txt in Resources */,
+				D2699D382BFC270A00F90107 /* Chivo-Regular.ttf in Resources */,
+				D2699D122BFC26BE00F90107 /* HS_OFL.txt in Resources */,
+				D2699D042BFC10EE00F90107 /* FS_OFL.txt in Resources */,
 				D2E8B7742BFBE7B300B5FF40 /* Preview Assets.xcassets in Resources */,
+				D2699D3F2BFC270A00F90107 /* C_OFL.txt in Resources */,
 				D2E8B7712BFBE7B300B5FF40 /* Assets.xcassets in Resources */,
+				D2699D102BFC26BE00F90107 /* HindSiliguri-Regular.ttf in Resources */,
 				D2699CF22BFC10EE00F90107 /* FiraSans-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,9 +268,13 @@
 				D2E8B7872BFBFC7000B5FF40 /* Business.swift in Sources */,
 				D2E8B76F2BFBE7B100B5FF40 /* ContentView.swift in Sources */,
 				D2E8B7852BFBFAD900B5FF40 /* BusinessVM.swift in Sources */,
+				D2699D442BFC2A1500F90107 /* FullScreenProgressIndicator.swift in Sources */,
 				D2E8B76D2BFBE7B100B5FF40 /* TakeHome_PursApp.swift in Sources */,
+				D2699D482BFC2B8300F90107 /* ErrorView.swift in Sources */,
+				D2699D422BFC28FA00F90107 /* Constants.swift in Sources */,
 				D2E8B7892BFC00A600B5FF40 /* BusinessScreen.swift in Sources */,
 				D2E8B77B2BFBE7D800B5FF40 /* Network.swift in Sources */,
+				D2699D462BFC2B5900F90107 /* Accordion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
