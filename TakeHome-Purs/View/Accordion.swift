@@ -41,6 +41,9 @@ struct Accordion: View {
                 HStack {
                     Spacer()
                 }
+                Divider()
+                    .foregroundStyle(.black.opacity(0.25))
+                    .padding(.horizontal)
                 List(hours, id: \.self) { hour in
                     HStack {
                         Text(hour.dayOfWeek ?? "")
