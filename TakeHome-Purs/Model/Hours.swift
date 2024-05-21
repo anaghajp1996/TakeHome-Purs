@@ -33,6 +33,8 @@ struct Hours: Decodable, Hashable {
 struct Timings: Hashable {
     var day: String
     var timeRanges: [TimeRange]
+    var isOpenNow: Bool
+    var isClosingSoon: Bool
 }
 
 struct TimeRange: Hashable {
@@ -62,13 +64,24 @@ func createTimingsDictionary(_ hours: [Hours]) -> [Timings] {
             dictionary[key] = values
         }
     }
-    timings = dictionary.map { Timings(day: dayOfWeek[$0.key] ?? "",
-                                       timeRanges: $0.value.map {
-                                           let startTime = convertDateToString($0.0)
-                                           let endTime = convertDateToString($0.1)
-                                           let rangeString = startTime == endTime ? "Open 24hrs" : "\(startTime) - \(endTime)"
-                                           return TimeRange(startTime: $0.0, endTime: $0.1, rangeString: rangeString)
-                                       }) }
+    timings = dictionary.map {
+        var isOpenNow = false
+        var isClosingSoon = false
+        return Timings(day: dayOfWeek[$0.key] ?? "",
+                       timeRanges: $0.value.map {
+                           let startTime = convertDateToString($0.0)
+                           let endTime = convertDateToString($0.1)
+                           let rangeString = startTime == endTime ? "Open 24hrs" : "\(startTime) - \(endTime)"
+                           let currentHour = Calendar.current.component(.hour, from: Date())
+                           isOpenNow = currentHour >= Calendar.current.component(.hour, from: $0.0) && currentHour <= Calendar.current.component(.hour, from: $0.1)
+                           if isOpenNow {
+                               isClosingSoon = Calendar.current.component(.hour, from: $0.1) - currentHour <= 1
+                           }
+                           return TimeRange(startTime: $0.0, endTime: $0.1, rangeString: rangeString)
+                       },
+                       isOpenNow: isOpenNow,
+                       isClosingSoon: isClosingSoon)
+    }
     for var timing in timings {
         timing.timeRanges = combineTimeRanges(timing.timeRanges)
     }
@@ -84,7 +97,8 @@ func combineTimeRanges(_ ranges: [TimeRange]) -> [TimeRange] {
             if index < sortedTimes.count - 1 {
                 // Check 2 time ranges can be combined
                 if Calendar.current.component(.hour, from: sortedTimes[index].endTime) ==
-                    Calendar.current.component(.hour, from: sortedTimes[index + 1].startTime) {
+                    Calendar.current.component(.hour, from: sortedTimes[index + 1].startTime)
+                {
                     let startTime = sortedTimes[index].startTime
                     let endTime = sortedTimes[index + 1].endTime
                     let rangeString = startTime == endTime ? "Open 24hrs" : "\(startTime) - \(endTime)"

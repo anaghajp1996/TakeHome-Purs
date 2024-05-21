@@ -36,16 +36,9 @@ struct BusinessScreen: View {
                         .background(
                             LinearGradient(gradient: Gradient(colors: [.black.opacity(0.5), .clear]), startPoint: .top, endPoint: .bottom)
                         )
-                        if let hours = business?.hours, let timings = business?.combinedHours {
-                            Accordion(title:
-                                AnyView(
-                                    HStack {
-                                        Text("title here")
-                                            .font(.custom(Constants.HindSiliguriReg, size: 18))
-                                        Circle()
-                                            .fill(.green)
-                                            .frame(width: 7, height: 7)
-                                    }), collapseAccordion: $collapseAccordion, hours: hours, timings: timings)
+                        if let timings = business?.combinedHours {
+                            Accordion(collapseAccordion: $collapseAccordion,
+                                      timings: timings)
                                 .background(.ultraThinMaterial)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                                 .padding()
