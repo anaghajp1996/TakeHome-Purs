@@ -12,3 +12,5 @@ enum Constants {
     static let HindSiliguriReg = "HindSiliguri-Regular"
     static let ChivoReg = "Chivo-Regular"
 }
+
+let dayOfWeek = ["MON": "Monday", "TUE": "Tuesday", "WED": "Wednesday", "THU": "Thursday", "FRI": "Friday", "SAT": "Saturday", "SUN": "Sunday"]

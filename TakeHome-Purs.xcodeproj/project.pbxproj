@@ -18,6 +18,7 @@
 		D2699D442BFC2A1500F90107 /* FullScreenProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2699D432BFC2A1500F90107 /* FullScreenProgressIndicator.swift */; };
 		D2699D462BFC2B5900F90107 /* Accordion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2699D452BFC2B5900F90107 /* Accordion.swift */; };
 		D2699D482BFC2B8300F90107 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2699D472BFC2B8200F90107 /* ErrorView.swift */; };
+		D2699D4A2BFC6B2F00F90107 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2699D492BFC6B2F00F90107 /* Utilities.swift */; };
 		D2E8B76D2BFBE7B100B5FF40 /* TakeHome_PursApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8B76C2BFBE7B100B5FF40 /* TakeHome_PursApp.swift */; };
 		D2E8B76F2BFBE7B100B5FF40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8B76E2BFBE7B100B5FF40 /* ContentView.swift */; };
 		D2E8B7712BFBE7B300B5FF40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E8B7702BFBE7B300B5FF40 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		D2699D432BFC2A1500F90107 /* FullScreenProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenProgressIndicator.swift; sourceTree = "<group>"; };
 		D2699D452BFC2B5900F90107 /* Accordion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accordion.swift; sourceTree = "<group>"; };
 		D2699D472BFC2B8200F90107 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		D2699D492BFC6B2F00F90107 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D2E8B7692BFBE7B100B5FF40 /* TakeHome-Purs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TakeHome-Purs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E8B76C2BFBE7B100B5FF40 /* TakeHome_PursApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeHome_PursApp.swift; sourceTree = "<group>"; };
 		D2E8B76E2BFBE7B100B5FF40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		D2E8B7602BFBE7B100B5FF40 = {
 			isa = PBXGroup;
 			children = (
+				D2699D492BFC6B2F00F90107 /* Utilities.swift */,
 				D2699D412BFC28FA00F90107 /* Constants.swift */,
 				D2699D2A2BFC270A00F90107 /* Chivo */,
 				D2699D0C2BFC26BE00F90107 /* Hind_Siliguri */,
@@ -267,6 +270,7 @@
 			files = (
 				D2E8B7872BFBFC7000B5FF40 /* Business.swift in Sources */,
 				D2E8B76F2BFBE7B100B5FF40 /* ContentView.swift in Sources */,
+				D2699D4A2BFC6B2F00F90107 /* Utilities.swift in Sources */,
 				D2E8B7852BFBFAD900B5FF40 /* BusinessVM.swift in Sources */,
 				D2699D442BFC2A1500F90107 /* FullScreenProgressIndicator.swift in Sources */,
 				D2E8B76D2BFBE7B100B5FF40 /* TakeHome_PursApp.swift in Sources */,

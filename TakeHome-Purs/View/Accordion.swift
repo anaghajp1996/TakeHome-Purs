@@ -11,6 +11,7 @@ struct Accordion: View {
     var title: AnyView
     @Binding var collapseAccordion: Bool
     var hours: [Hours]
+    var timings: [Timings]
 
     var body: some View {
         VStack {
@@ -44,16 +45,20 @@ struct Accordion: View {
                 Divider()
                     .foregroundStyle(.black.opacity(0.25))
                     .padding(.horizontal)
-                List(hours, id: \.self) { hour in
-                    HStack {
-                        Text(hour.dayOfWeek ?? "")
+                List(timings, id: \.self) { timing in
+                    let rangeString = timing.timings.map { $0.rangeString }.joined(separator: ",\n")
+                    HStack(alignment: .top) {
+                        Text(timing.day)
                         Spacer()
-                        Text("\(hour.startTime ?? "") - \(hour.endTime ?? "")")
+                        Text(rangeString)
+                            .frame(width: 150, height: .infinity)
+                            .multilineTextAlignment(.trailing)
                     }
                     .font(.custom(Constants.HindSiliguriReg, size: 18))
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
                 }
+
                 .listStyle(.plain)
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapseAccordion ? 0 : 250)

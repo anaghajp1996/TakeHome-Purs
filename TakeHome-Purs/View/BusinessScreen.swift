@@ -36,7 +36,7 @@ struct BusinessScreen: View {
                         .background(
                             LinearGradient(gradient: Gradient(colors: [.black.opacity(0.5), .clear]), startPoint: .top, endPoint: .bottom)
                         )
-                        if let hours = business?.hours {
+                        if let hours = business?.hours, let timings = business?.timings {
                             Accordion(title:
                                 AnyView(
                                     HStack {
@@ -45,7 +45,7 @@ struct BusinessScreen: View {
                                         Circle()
                                             .fill(.green)
                                             .frame(width: 7, height: 7)
-                                    }), collapseAccordion: $collapseAccordion, hours: hours)
+                                    }), collapseAccordion: $collapseAccordion, hours: hours, timings: timings)
                                 .background(.ultraThinMaterial)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                                 .padding()
