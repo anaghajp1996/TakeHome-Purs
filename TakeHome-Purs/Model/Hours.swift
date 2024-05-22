@@ -33,8 +33,6 @@ struct Hours: Decodable, Hashable {
 struct Timings: Hashable {
     var day: String
     var timeRanges: [TimeRange]
-    var isOpenNow: Bool
-    var isClosingSoon: Bool
 }
 
 struct TimeRange: Hashable {
@@ -65,22 +63,14 @@ func createTimingsDictionary(_ hours: [Hours]) -> [Timings] {
         }
     }
     timings = dictionary.map {
-        var isOpenNow = false
-        var isClosingSoon = false
-        return Timings(day: dayOfWeek[$0.key] ?? "",
-                       timeRanges: $0.value.map {
-                           let startTime = convertDateToString($0.0)
-                           let endTime = convertDateToString($0.1)
-                           let rangeString = startTime == endTime ? "Open 24hrs" : "\(startTime) - \(endTime)"
-                           let currentHour = Calendar.current.component(.hour, from: Date())
-                           isOpenNow = currentHour >= Calendar.current.component(.hour, from: $0.0) && currentHour <= Calendar.current.component(.hour, from: $0.1)
-                           if isOpenNow {
-                               isClosingSoon = Calendar.current.component(.hour, from: $0.1) - currentHour <= 1
-                           }
-                           return TimeRange(startTime: $0.0, endTime: $0.1, rangeString: rangeString)
-                       },
-                       isOpenNow: isOpenNow,
-                       isClosingSoon: isClosingSoon)
+        Timings(day: dayOfWeek[$0.key] ?? "",
+                timeRanges: $0.value.map {
+                    let startTime = convertDateToString($0.0)
+                    let endTime = convertDateToString($0.1)
+                    let rangeString = startTime == endTime ? "Open 24hrs" : "\(startTime) - \(endTime)"
+                    let currentHour = Calendar.current.component(.hour, from: Date())
+                    return TimeRange(startTime: $0.0, endTime: $0.1, rangeString: rangeString)
+                })
     }
     for var timing in timings {
         timing.timeRanges = combineTimeRanges(timing.timeRanges)

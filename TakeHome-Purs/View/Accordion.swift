@@ -11,38 +11,8 @@ struct Accordion: View {
     @Binding var collapseAccordion: Bool
     var timings: [Timings]
 
-    func getCurrentDay() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        return dateFormatter.string(from: Date.now)
-    }
-
-    func getCurrentHourOf(_ date: Date) -> Int {
-        let currentHour = Calendar.current.component(.hour, from: date)
-        return currentHour
-    }
-
-    func checkIfOpenNow() -> (Bool, Bool) {
-        // Current day's opening hours
-        let openHours = timings.first(where: { $0.day == getCurrentDay() })
-        let currentHour = getCurrentHourOf(Date.now)
-        var isClosingSoon = false
-        let isOpenNow = openHours?.timeRanges.contains(where: {
-            let startTime = getCurrentHourOf($0.startTime)
-            let endTime = getCurrentHourOf($0.endTime)
-            // Is current time within opening hours?
-            let isOpen = startTime < currentHour && currentHour < endTime
-            if isOpen {
-                // If business is open, is it closing soon?
-                isClosingSoon = endTime - currentHour <= 1
-            }
-            return isOpen
-        })
-        return (isOpenNow ?? false, isClosingSoon)
-    }
-
     var body: some View {
-        let isOpen = checkIfOpenNow()
+        let isOpen = checkIfOpenNow(timings: timings)
         VStack {
             Button(
                 action: {
@@ -54,7 +24,7 @@ struct Accordion: View {
                     VStack(alignment: .leading) {
                         HStack {
                             HStack {
-                                Text("title here")
+                                Text(getOpeningHourTitle(for: timings))
                                     .font(.custom(Constants.HindSiliguriReg, size: 18))
                                 Circle()
                                     .fill(isOpen.0 ? isOpen.1 ? .yellow : .green : .red)
