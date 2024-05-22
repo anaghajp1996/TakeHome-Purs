@@ -34,7 +34,7 @@ func getDay(from date: Date) -> String {
 
 func getCurrentHourOf(_ date: Date) -> Int {
     let currentHour = Calendar.current.component(.hour, from: date)
-    return currentHour
+    return currentHour == 0 ? 24 : currentHour
 }
 
 func checkIfOpenNow(timings: [Timings]) -> (Bool, Bool) {
@@ -75,6 +75,9 @@ func getOpeningHourTitle(for timings: [Timings]) -> String {
         }) {
             // Is open now.
             openUntil = currentOpenRange.endTime
+            if let openUntil = openUntil {
+                title = "Open until \(convertDateToString(openUntil))"
+            }
         } else {
             // Opens next at, on the same day
             opensNextAt = timings.first(where: { $0.day == currentDay })?.timeRanges.first(where: {
@@ -87,7 +90,7 @@ func getOpeningHourTitle(for timings: [Timings]) -> String {
                 if let openHours = openHours {
                     let nextOpenDayIndex = timings.index(after: timings.firstIndex(of: openHours) ?? 0)
                     if nextOpenDayIndex < timings.count {
-                        let nextOpenDay = timings[timings.index(after: timings.firstIndex(of: openHours) ?? 0)]
+                        let nextOpenDay = timings[nextOpenDayIndex]
                         opensNextAt = nextOpenDay.timeRanges.first?.startTime
                         if let opensNextAt = opensNextAt {
                             title = "Opens \(nextOpenDay.day) at \(convertDateToString(opensNextAt))"

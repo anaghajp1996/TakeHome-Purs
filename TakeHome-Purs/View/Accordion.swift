@@ -33,6 +33,7 @@ struct Accordion: View {
                             Spacer()
                             Image(systemName: collapseAccordion ? "chevron.down" : "chevron.up")
                         }
+                        .contentShape(Rectangle())
                         Text("See full hours")
                             .font(.custom(Constants.ChivoReg, size: 12))
                             .textCase(.uppercase)
