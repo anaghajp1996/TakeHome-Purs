@@ -43,8 +43,7 @@ struct TimeRange: Hashable {
 }
 
 // Timings specific utilities
-
-// Function to combine DAYS
+// Function to combine days
 func createTimingsDictionary(_ hours: [Hours]) -> [Timings] {
     var timings = [Timings]()
     var dictionary = [String: [(Date, Date)]]()
@@ -68,12 +67,11 @@ func createTimingsDictionary(_ hours: [Hours]) -> [Timings] {
                     let startTime = convertDateToString($0.0)
                     let endTime = convertDateToString($0.1)
                     let rangeString = startTime == endTime ? "Open 24hrs" : "\(startTime) - \(endTime)"
-                    let currentHour = Calendar.current.component(.hour, from: Date())
                     return TimeRange(startTime: $0.0, endTime: $0.1, rangeString: rangeString)
                 })
     }
-    for var timing in timings {
-        timing.timeRanges = combineTimeRanges(timing.timeRanges)
+    for index in 0 ... timings.count - 1 {
+        timings[index].timeRanges = combineTimeRanges(timings[index].timeRanges)
     }
     return timings
 }
@@ -83,23 +81,31 @@ func combineTimeRanges(_ ranges: [TimeRange]) -> [TimeRange] {
     let sortedTimes = ranges.sorted(by: { Calendar.current.component(.hour, from: $0.startTime) < Calendar.current.component(.hour, from: $1.startTime) })
     var combinedTimes: [TimeRange] = []
     if !sortedTimes.isEmpty {
-        for index in 0 ... sortedTimes.count - 1 {
-            if index < sortedTimes.count - 1 {
-                // Check 2 time ranges can be combined
-                if Calendar.current.component(.hour, from: sortedTimes[index].endTime) ==
+        var index = 0
+        while index <= sortedTimes.count - 1 {
+            if index + 1 <= sortedTimes.count - 1 {
+                // Check if 2 time ranges can be combined
+                if Calendar.current.component(.hour, from: sortedTimes[index].endTime) >=
                     Calendar.current.component(.hour, from: sortedTimes[index + 1].startTime)
                 {
-                    let startTime = sortedTimes[index].startTime
-                    let endTime = sortedTimes[index + 1].endTime
+                    let startTime = convertDateToString(sortedTimes[index].startTime)
+                    let endTime = convertDateToString(sortedTimes[index + 1].endTime)
                     let rangeString = startTime == endTime ? "Open 24hrs" : "\(startTime) - \(endTime)"
                     combinedTimes.append(TimeRange(startTime: sortedTimes[index].startTime,
                                                    endTime: sortedTimes[index + 1].endTime,
                                                    rangeString: rangeString))
+                    index += 2
                 } else {
                     combinedTimes.append(sortedTimes[index])
+                    combinedTimes.append(sortedTimes[index + 1])
+                    index += 2
                 }
+
+            } else {
+                combinedTimes.append(sortedTimes[index])
+                index += 1
             }
         }
     }
-    return combinedTimes
+    return combinedTimes.isEmpty ? sortedTimes : combinedTimes
 }
