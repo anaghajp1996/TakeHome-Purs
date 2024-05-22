@@ -11,7 +11,7 @@ struct BusinessScreen: View {
     var businessVM = BusinessVM()
     @State var business: Business?
     @State var loading = false
-    @State var collapseAccordion = false
+    @State var collapseAccordion = true
     let imageURL = "https://lh3.googleusercontent.com/p/AF1QipNvaaR6eoBC7I48N_-ROU30qsi_h2Sf5eQRxWtr=s1360-w1360-h1020"
 
     var body: some View {

@@ -63,54 +63,57 @@ func getOpeningHourTitle(for timings: [Timings]) -> String {
     let currentHour = getCurrentHourOf(now)
     var openUntil: Date?
     var opensNextAt: Date?
+    if timings.count != 0 {
+        // If open now-
+        let openHours = timings.first(where: { $0.day == currentDay })
 
-    // If open now-
-    let openHours = timings.first(where: { $0.day == currentDay })
-
-    if let currentOpenRange = openHours?.timeRanges.first(where: {
-        let startTime = getCurrentHourOf($0.startTime)
-        let endTime = getCurrentHourOf($0.endTime)
-        // Is current time within opening hours?
-        return startTime <= currentHour && currentHour <= endTime
-    }) {
-        // Is open now.
-        openUntil = currentOpenRange.endTime
-    } else {
-        // Opens next at, on the same day
-        opensNextAt = timings.first(where: { $0.day == currentDay })?.timeRanges.first(where: {
+        if let currentOpenRange = openHours?.timeRanges.first(where: {
             let startTime = getCurrentHourOf($0.startTime)
-            // Next opening hour of the day
-            return startTime > currentHour
-        })?.startTime
-        if opensNextAt == nil {
-            // Get next day's opening hours; adding interval 86400 to get tomorrow's day
-            if let openHours = openHours {
-                let nextOpenDay = timings[timings.index(after: timings.firstIndex(of: openHours) ?? 0)]
-                opensNextAt = nextOpenDay.timeRanges.first?.startTime
-                if let opensNextAt = opensNextAt {
-                    title = "Opens \(nextOpenDay.day) at \(convertDateToString(opensNextAt))"
+            let endTime = getCurrentHourOf($0.endTime)
+            // Is current time within opening hours?
+            return startTime <= currentHour && currentHour <= endTime
+        }) {
+            // Is open now.
+            openUntil = currentOpenRange.endTime
+        } else {
+            // Opens next at, on the same day
+            opensNextAt = timings.first(where: { $0.day == currentDay })?.timeRanges.first(where: {
+                let startTime = getCurrentHourOf($0.startTime)
+                // Next opening hour of the day
+                return startTime > currentHour
+            })?.startTime
+            if opensNextAt == nil {
+                // Get next day's opening hours; adding interval 86400 to get tomorrow's day
+                if let openHours = openHours {
+                    let nextOpenDayIndex = timings.index(after: timings.firstIndex(of: openHours) ?? 0)
+                    if nextOpenDayIndex < timings.count {
+                        let nextOpenDay = timings[timings.index(after: timings.firstIndex(of: openHours) ?? 0)]
+                        opensNextAt = nextOpenDay.timeRanges.first?.startTime
+                        if let opensNextAt = opensNextAt {
+                            title = "Opens \(nextOpenDay.day) at \(convertDateToString(opensNextAt))"
+                        }
+                    }
                 }
+                let nextOpenDay = timings.first(where: { $0.day == getDay(from: now.addingTimeInterval(86400)) })
+                opensNextAt = nextOpenDay?.timeRanges.first?.startTime
+                if let opensNextAt = opensNextAt {
+                    title = "Opens \(nextOpenDay?.day ?? "") at \(convertDateToString(opensNextAt))"
+                }
+            } else {
+                title = "Reopens at \(convertDateToString(opensNextAt!))"
             }
+        }
 
-            let nextOpenDay = timings.first(where: { $0.day == getDay(from: now.addingTimeInterval(86400)) })
-            opensNextAt = nextOpenDay?.timeRanges.first?.startTime
+        if let openUntil = openUntil {
             if let opensNextAt = opensNextAt {
-                title = "Opens \(nextOpenDay?.day ?? "") at \(convertDateToString(opensNextAt))"
+                title = "Open until \(convertDateToString(openUntil)), reopens at \(convertDateToString(opensNextAt))"
+            } else {
+                title = "Open until \(convertDateToString(openUntil))"
             }
-        } else {
-            title = "Reopens at \(convertDateToString(opensNextAt!))"
-        }
-    }
-
-    if let openUntil = openUntil {
-        if let opensNextAt = opensNextAt {
-            title = "Open until \(convertDateToString(openUntil)), reopens at \(convertDateToString(opensNextAt))"
-        } else {
-            title = "Open until \(convertDateToString(openUntil))"
-        }
-    } else if let opensNextAt = opensNextAt {
-        if title.isEmpty {
-            title = "Opens \(getDay(from: opensNextAt)) at \(convertDateToString(opensNextAt))"
+        } else if let opensNextAt = opensNextAt {
+            if title.isEmpty {
+                title = "Opens \(getDay(from: opensNextAt)) at \(convertDateToString(opensNextAt))"
+            }
         }
     }
     return title
